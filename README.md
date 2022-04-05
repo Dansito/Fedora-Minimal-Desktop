@@ -1,9 +1,12 @@
-# Fedora-Minimal-Desktop
+# Fedora-Minimal-Desktop : Tested in (Fedora-36)
 A script that automatically install a basic gnome desktop with only necessary things
 
 # What's in ?
 Fedora base, Gnome-Shell, GDM, Firefox, Nautilus, Gnome-Console, Gnome-Text-Editor Gnome-Software(Optional), some base font
-![Gnome 42 Fedora 36](https://i.ibb.co/pd3MFqh/unknown.png)
+
+
+
+![Gnome 42 Fedora 36](https://raw.githubusercontent.com/Dansito/Fedora-Minimal-Desktop/Fedora-36/assets/gnome42.png)
 
 
 # How to use ?
