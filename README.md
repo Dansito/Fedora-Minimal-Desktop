@@ -21,8 +21,10 @@ Download the script on your machine : curl -L https://bit.ly/35FfPYV -o fedora-m
 
 
 # Execute
-```sudo chmod 777 fedora-minimal-install.sh
+```
+sudo chmod 777 fedora-minimal-install.sh
 
+sudo ./fedora-minimal-install.sh or with root account
 
- sudo ./fedora-minimal-install.sh or with root account```
+```
 
