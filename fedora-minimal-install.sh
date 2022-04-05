@@ -66,9 +66,9 @@ appstore=0
 read appstore
 if [ $appstore = "1" ]
 then
-	dnf install gnome-shell gdm gnome-terminal firefox nautilus gnome-calculator gnome-system-monitor file-roller gnome-software gnome-tweaks chrome-gnome-shell @development-tools gdouros-symbola-fonts wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y
+	dnf install gnome-shell gdm gnome-console firefox nautilus gnome-calculator gnome-system-monitor gnome-text-editor file-roller gnome-software gnome-tweaks chrome-gnome-shell @development-tools gdouros-symbola-fonts wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y
 else
-	dnf install gnome-shell gdm gnome-terminal firefox nautilus gnome-calculator gnome-system-monitor file-roller gnome-tweaks chrome-gnome-shell @development-tools gdouros-symbola-fonts wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y
+	dnf install gnome-shell gdm gnome-console firefox nautilus gnome-calculator gnome-system-monitor gnome-text-editor file-roller gnome-tweaks chrome-gnome-shell @development-tools gdouros-symbola-fonts wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y
 fi
 ##GDM Service
 systemctl enable gdm.service
