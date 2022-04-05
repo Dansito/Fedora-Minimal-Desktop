@@ -2,7 +2,7 @@
 A script that automatically install a basic gnome desktop with only necessary things
 
 # What's in ?
-Fedora base, Gnome-Shell, GDM, Firefox, Nautilus, Gnome-Console, Gnome-Text-Editor Gnome-Software(Optional), some base font
+Fedora base, Gnome-Shell, GDM, Firefox, Nautilus, Gnome-Console, Gnome-Text-Editor, Gnome-Software(Optional), some base font
 
 
 
@@ -20,9 +20,8 @@ Download the script on your machine : curl -L https://bit.ly/35FfPYV -o fedora-m
 
 
 
+# Execute
 sudo chmod 777 fedora-minimal-install.sh
-
-
 
 
 sudo ./fedora-minimal-install.sh or with root account
