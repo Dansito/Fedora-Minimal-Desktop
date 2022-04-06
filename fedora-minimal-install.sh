@@ -59,19 +59,57 @@ fi
 
 ##Installing core apps
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-##Question for App Store
-echo "Would you like to use Gnome-software ?"
-echo "1= yes 0 = no"
-appstore=0
-read appstore
-if [ $appstore = "1" ]
+
+##DE Choice
+echo "Which DE want to use?"
+echo "1= GNOME 2= KDE"
+dechoice=1
+read dechoice
+
+#GNOME
+if [ $dechoice = "1"]
 then
-	dnf install gnome-shell gdm gnome-console firefox nautilus gnome-calculator gnome-system-monitor gnome-text-editor file-roller gnome-software gnome-tweaks chrome-gnome-shell @development-tools gdouros-symbola-fonts wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y
-else
-	dnf install gnome-shell gdm gnome-console firefox nautilus gnome-calculator gnome-system-monitor gnome-text-editor file-roller gnome-tweaks chrome-gnome-shell @development-tools gdouros-symbola-fonts wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y
+	echo "Would you like to use Gnome-software?"
+	echo "1= yes 0 = no"
+	appstore=0
+	read appstore
+	if [ $appstore = "1" ]
+	then
+		dnf install gnome-shell gdm gnome-console firefox nautilus gnome-calculator gnome-system-monitor gnome-text-editor file-roller gnome-software gnome-tweaks chrome-gnome-shell @development-tools gdouros-symbola-fonts wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y
+	else
+		dnf install gnome-shell gdm gnome-console firefox nautilus gnome-calculator gnome-system-monitor gnome-text-editor file-roller gnome-tweaks chrome-gnome-shell @development-tools gdouros-symbola-fonts wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y
+	fi
 fi
-##GDM Service
-systemctl enable gdm.service
+
+#KDE
+if [ $dechoice = "2"]
+then
+	echo "Would you like to use Discover?"
+	echo "1= yes 0 = no"
+	appstore=0
+	read appstore
+	if [ $appstore = "1"]
+	then
+		sudo dnf install NetworkManager-config-connectivity-fedora adwaita-gtk2-theme bluedevil breeze-icon-theme cagibi colord-kde cups-pk-helper dolphin firewall-config glibc-all-langpacks gnome-keyring-pam kcm_systemd kcolorchooser kde-gtk-config kde-partitionmanager kde-platform-plugin kde-print-manager kde-runtime kde-settings-pulseaudio kde-style-breeze kdegraphics-thumbnailers kdelibs kdeplasma-addons kdialog kdnssd kf5-akonadi-server kf5-akonadi-server-mysql kf5-baloo-file kf5-kipi-plugins kfind kgpg khotkeys kinfocenter kmenuedit konsole5 kscreen kscreenlocker ksshaskpass ksysguard kwalletmanager5 kwebkitpart kwin pam-kwallet phonon-backend-gstreamer phonon-qt5-backend-gstreamer pinentry-qt plasma-breeze plasma-desktop plasma-desktop-doc plasma-drkonqi plasma-nm plasma-nm-l2tp plasma-nm-openconnect plasma-nm-openswan plasma-nm-openvpn plasma-nm-pptp plasma-nm-vpnc plasma-pa plasma-pk-updates plasma-user-manager plasma-workspace plasma-workspace-geolocation polkit-kde qt5-qtbase-gui qt5-qtdeclarative sddm sddm-breeze sddm-kcm sni-qt kate ark spectacle kcalc xorg-x11-drv-libinput setroubleshoot system-config-users system-config-keyboard system-config-language @development-tools @base-x @"Common NetworkManager Submodules" plasma-discover wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y 
+	else
+		sudo dnf install NetworkManager-config-connectivity-fedora adwaita-gtk2-theme bluedevil breeze-icon-theme cagibi colord-kde cups-pk-helper dolphin firewall-config glibc-all-langpacks gnome-keyring-pam kcm_systemd kcolorchooser kde-gtk-config kde-partitionmanager kde-platform-plugin kde-print-manager kde-runtime kde-settings-pulseaudio kde-style-breeze kdegraphics-thumbnailers kdelibs kdeplasma-addons kdialog kdnssd kf5-akonadi-server kf5-akonadi-server-mysql kf5-baloo-file kf5-kipi-plugins kfind kgpg khotkeys kinfocenter kmenuedit konsole5 kscreen kscreenlocker ksshaskpass ksysguard kwalletmanager5 kwebkitpart kwin pam-kwallet phonon-backend-gstreamer phonon-qt5-backend-gstreamer pinentry-qt plasma-breeze plasma-desktop plasma-desktop-doc plasma-drkonqi plasma-nm plasma-nm-l2tp plasma-nm-openconnect plasma-nm-openswan plasma-nm-openvpn plasma-nm-pptp plasma-nm-vpnc plasma-pa plasma-pk-updates plasma-user-manager plasma-workspace plasma-workspace-geolocation polkit-kde qt5-qtbase-gui qt5-qtdeclarative sddm sddm-breeze sddm-kcm sni-qt kate ark spectacle kcalc xorg-x11-drv-libinput setroubleshoot system-config-users system-config-keyboard system-config-language @development-tools @base-x @"Common NetworkManager Submodules" wget liberation-sans-fonts liberation-fonts liberation-serif-fonts liberation-narrow-fonts liberation-mono-fonts liberation-fonts-common google-noto-cjk-fonts google-noto-cjk-fonts-common google-noto-cjk-fonts-common -y
+	fi
+fi
+
+##Display Manager
+if [ $dechoice = "1"]
+then
+	systemctl enable gdm.service
+else
+	echo ""
+fi
+if [ $dechoice = "2"]
+then
+	systemctl enable sddm.service
+else
+	echo ""
+fi
+
 
 ##flatpak support
 if [ $flathub = "1" ]
