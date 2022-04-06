@@ -104,7 +104,7 @@ else
 fi
 if [ $dechoice = "2" ]
 then
-	systemctl enable sddm.service
+	systemctl enable sddm
 else
 	echo ""
 fi
