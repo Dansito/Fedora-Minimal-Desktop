@@ -1,4 +1,3 @@
-
 if [ $(whoami) = "root" ]
 then
         echo "Welcome to fedora minimal desktop installer"
