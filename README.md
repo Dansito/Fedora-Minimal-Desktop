@@ -14,7 +14,7 @@ Fedora base, Gnome-Shell, GDM, Firefox, Nautilus, Gnome-Console, Gnome-Text-Edit
 Fedora base, plasma-nm, sddm, firefox, dolphin, konsole, kate, ark, spectacle, discover(optional), some base font
 
 
-![Kde 5.24 Fedora 36]https://raw.githubusercontent.com/Dansito/Fedora-Minimal-Desktop/Fedora-36/assets/kde524.png)
+![Kde 5.24 Fedora 36](https://raw.githubusercontent.com/Dansito/Fedora-Minimal-Desktop/Fedora-36/assets/kde524.png)
 
 # How to use ?
 Download fedora server netinstall iso : https://getfedora.org/server/download/
@@ -35,7 +35,7 @@ sudo ./fedora-minimal-install.sh or with root account
 
 ```
 
-# PD
+# Note
 If you have problems regarding proprietary drivers run this command
 
 ```
