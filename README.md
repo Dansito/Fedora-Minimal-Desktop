@@ -1,8 +1,8 @@
 # Fedora-Minimal-Desktop : Tested in (Fedora-36)
-A script that automatically install a basic gnome desktop with only necessary things
+A script that automatically install a basic gnome and kde desktop with only necessary things
 
 # What's in ?
-# GNOME
+## GNOME
 Fedora base, Gnome-Shell, GDM, Firefox, Nautilus, Gnome-Console, Gnome-Text-Editor, Gnome-Software(Optional), some base font
 
 
@@ -10,8 +10,11 @@ Fedora base, Gnome-Shell, GDM, Firefox, Nautilus, Gnome-Console, Gnome-Text-Edit
 ![Gnome 42 Fedora 36](https://raw.githubusercontent.com/Dansito/Fedora-Minimal-Desktop/Fedora-36/assets/gnome42.png)
 
 
-# KDE (Testing)
+## KDE
+Fedora base, plasma-nm, sddm, firefox, dolphin, konsole, kate, ark, spectacle, discover(optional), some base font
 
+
+![Kde 5.24 Fedora 36]https://raw.githubusercontent.com/Dansito/Fedora-Minimal-Desktop/Fedora-36/assets/kde524.png)
 
 # How to use ?
 Download fedora server netinstall iso : https://getfedora.org/server/download/
@@ -32,3 +35,10 @@ sudo ./fedora-minimal-install.sh or with root account
 
 ```
 
+# PD
+If you have problems regarding proprietary drivers run this command
+
+```
+sudo dnf install @hardware-support
+
+```
