@@ -34,11 +34,3 @@ sudo chmod 777 fedora-minimal-install.sh
 sudo ./fedora-minimal-install.sh or with root account
 
 ```
-
-# Note
-If you have problems regarding proprietary drivers run this command
-
-```
-sudo dnf install @hardware-support
-
-```
